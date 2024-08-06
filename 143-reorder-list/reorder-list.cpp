@@ -31,8 +31,6 @@ public:
             curr = curr->next;
         }
         
-        if (n % 2 != 0) {
-            curr->val = v[n / 2];
-        }
+      
     }
 };
