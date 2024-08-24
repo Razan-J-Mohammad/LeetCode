@@ -11,6 +11,7 @@ public:
         else if(price<prices[i]-mn)
         price=prices[i]-mn;
        }
+       
        return price;
     }
 };
