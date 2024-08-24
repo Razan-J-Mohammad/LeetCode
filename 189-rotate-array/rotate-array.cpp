@@ -1,18 +1,24 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        int n = nums.size();
-        k = k % n;
-        if (k == 0) return;
-        vector<int> temp(n);
-        for (int i = 0; i < k; i++) {
-            temp[i] = nums[n - k + i];
+        if (nums.empty())return;
+        int m=nums.size();
+        k = k % m;
+        if(k==0)return;
+        int n=nums.size()-k;
+        vector<int>arr(nums.size(),0);
+        int j=0;
+        for(int i=n;i<m;i++){
+            arr[j]=nums[i];
+            j++;
         }
-        for (int i = k; i < n; i++) {
-            temp[i] = nums[i - k];
+        for(int l=0;l<n;l++){
+            arr[j]=nums[l];
+            j++;
         }
-        for (int i = 0; i < n; i++) {
-            nums[i] = temp[i];
+        for(int i=0;i<m;i++){
+            nums[i]=arr[i];
         }
+       
     }
 };
