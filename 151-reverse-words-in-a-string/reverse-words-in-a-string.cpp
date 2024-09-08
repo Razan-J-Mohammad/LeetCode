@@ -6,25 +6,20 @@
 class Solution {
 public:
     std::string reverseWords(std::string s) {
-        std::stack<std::string> words;
-        std::string word;
-        std::stringstream ss(s);
-        
-        while (ss >> word) {
+        stack<string>words;
+        string word;
+        stringstream ss(s);
+        while(ss>>word){
             words.push(word);
         }
-
-        std::string result;
-        
-        while (!words.empty()) {
-            result += words.top();
+        string result;
+        while(!words.empty()){
+            result+=words.top();
             words.pop();
-            if (!words.empty()) {
-                result += " ";
+            if(!words.empty()){
+                result+=" ";
             }
         }
-        
-        
         return result;
     }
 };
